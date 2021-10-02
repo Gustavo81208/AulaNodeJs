@@ -4,9 +4,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(
-  ""
-);
+mongoose.connect();
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -18,10 +16,13 @@ app.use(function (req, res, next) {
   next();
 });
 
+//Registar as models
 require("./models/user");
 
+//Rotas
 const userRouter = require("./routes/user-route");
 
 app.use("/users", userRouter);
 
+//meu erro
 module.exports = app;

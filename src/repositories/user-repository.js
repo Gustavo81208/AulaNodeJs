@@ -15,22 +15,17 @@ exports.delete = async (id) => {
   await User.findByIdAndDelete(id);
 };
 
-
 exports.getById = async (id) => {
   const result = await User.findById(id);
   return result;
-
 };
 
 exports.udpate = async (id, data) => {
   await User.findByIdAndUpdate(id, {
     $set: {
-
-      name: data.name,
-      address: data.address,
-      age: data.age,
-
-
+      nome: data.nome,
+      idade: data.idade,
+      endereco: data.endereco,
     },
   });
 };

@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-  name: {
+  nome: {
     type: String,
     required: true,
     trim: true,
   },
-  address: {
+  endereco: {
     type: String,
     required: true,
   },
-  age: {
+  idade: {
     type: Number,
     required: true,
   },
